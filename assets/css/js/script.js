@@ -8,3 +8,6 @@ var citySearchButton = $("#city-search-button");
 function deleteItems() {
     localStorage.clear();
   }
+
+  //Displays weather after clicking search button
+citySearchButton.on("click", displayWeather);
