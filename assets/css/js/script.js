@@ -3,3 +3,8 @@ var currentDate = (now.format("MM/DD/YYYY"));
 var city = "";
 var citySearch = $("#city-search");
 var citySearchButton = $("#city-search-button");
+
+//Clears localstorage
+function deleteItems() {
+    localStorage.clear();
+  }
