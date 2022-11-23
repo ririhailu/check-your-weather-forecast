@@ -11,3 +11,10 @@ function deleteItems() {
 
   //Displays weather after clicking search button
 citySearchButton.on("click", displayWeather);
+
+//displays weather after running currentWeather function
+function displayWeather(event) {
+    event.preventDefault();
+    if (citySearch.val().trim() !== "") {
+      city = citySearch.val().trim();
+      currentWeather(city);
