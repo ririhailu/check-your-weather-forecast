@@ -15,6 +15,21 @@ citySearchButton.on("click", displayWeather);
 //displays weather after running currentWeather function
 function displayWeather(event) {
     event.preventDefault();
-    if (citySearch.val().trim() !== "") {
+    if (citySearch.val().trim() !== "") 
       city = citySearch.val().trim();
-      currentWeather(city);
+      currentWeather(city);} 
+    
+//localstorage for searched cities
+var cityList = document.getElementById("city-list");
+cityList.textContent = "";
+
+var searchedCities = localStorage.getItem("visitedCities");
+if (searchedCities === null) {
+  searchedCities = [];
+} else {
+  searchedCities = JSON.parse(searchedCities);
+}
+searchedCities.push(city);
+
+var visitedCityNames = JSON.stringify(searchedCities);
+localStorage.setItem("visitedCities", visitedCityNames);
